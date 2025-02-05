@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
+const ARBITRUM_SEPOLIA_RPC_URL = process.env.ARBITRUM_SEPOLIA_RPC_URL;
 
 if (!PRIVATE_KEY || !SEPOLIA_RPC_URL) {
   throw new Error(
@@ -29,6 +30,15 @@ module.exports = {
       url: SEPOLIA_RPC_URL,
       accounts: [PRIVATE_KEY],
       chainId: 11155111,
+    },
+    arbitrumSepolia: {
+      url: ARBITRUM_SEPOLIA_RPC_URL,
+      accounts: [PRIVATE_KEY],
+      chainId: 421614,
+    },
+    opencampus: {
+      url: `https://rpc.open-campus-codex.gelato.digital/`,
+      accounts: [PRIVATE_KEY],
     },
   },
   paths: {

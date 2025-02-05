@@ -1,0 +1,8 @@
+{
+  "network": "arbitrumSepolia",
+  "contractAddress": "0x3e4DD76CC6433274d676244eA7162f1aCE559Dbb",
+  "zkVerifyContract": "0x82941a739E74eBFaC72D0d0f8E81B1Dac2f586D5",
+  "vkHash": "0xcd9079ce2c24819db62dc22e367f3d67872c5d74ad160ffc148a8883dd56a708",
+  "deploymentTime": "2025-02-02T18:36:08.984Z",
+  "deployer": "0x6A475ED41c9A172332DBa2308e5D6D059F650E12"
+}
