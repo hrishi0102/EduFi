@@ -1,0 +1,6 @@
+1,1,0,main.isAboveThreshold
+2,2,0,main.address
+3,-1,0,main.income
+4,-1,0,main.threshold
+5,3,0,main.diff
+6,4,0,main.aux
