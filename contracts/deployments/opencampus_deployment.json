@@ -1,0 +1,8 @@
+{
+  "network": "opencampus",
+  "contractAddress": "0x8030d7e5b94F4D6bb6C2638dEa9aFb2D5E7f5d31",
+  "zkVerifyContract": "0x147AD899D1773f5De5e064C33088b58c7acb7acf",
+  "vkHash": "0xcd9079ce2c24819db62dc22e367f3d67872c5d74ad160ffc148a8883dd56a708",
+  "deploymentTime": "2025-02-05T08:47:45.828Z",
+  "deployer": "0x6A475ED41c9A172332DBa2308e5D6D059F650E12"
+}

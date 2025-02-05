@@ -11,7 +11,7 @@ async function main() {
     const vkHash = process.env.VK_HASH;
 
     // Get zkVerify contract address from environment
-    const zkVerifyAddress = process.env.ZKV_CONTRACT_ADDRESS;
+    const zkVerifyAddress = process.env.ZKV_CONTRACT_ADDRESS_EDU;
     if (!zkVerifyAddress) {
       throw new Error(
         "ZKV_CONTRACT_ADDRESS not found in environment variables"
