@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import LoanApplication from "./pages/LoanApplication";
 import LoansDashboard from "./pages/LoansDashboard";
+import ChatInterface from "./pages/ChatInterface";
 
 const App = () => {
   const { isConnected } = useAppKitAccount();
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/apply" element={<LoanApplication />} />
                 <Route path="/loans" element={<LoansDashboard />} />
+                <Route path="/chat" element={<ChatInterface />} />
                 <Route path="*" element={<Navigate to="/home" replace />} />
               </Routes>
             </>
