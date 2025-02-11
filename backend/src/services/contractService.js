@@ -5,8 +5,8 @@ const { CONTRACT_ABIS } = require("../config/constants");
 class ContractService {
   constructor() {
     this.provider = new ethers.JsonRpcProvider(
-      // process.env.ARBITRUM_SEPOLIA_RPC_URL,
-      process.env.EDU_RPC_URL,
+      process.env.ARBITRUM_SEPOLIA_RPC_URL,
+      // process.env.EDU_RPC_URL,
       null,
       { polling: true }
     );
@@ -19,14 +19,14 @@ class ContractService {
     console.log("Contract address:", process.env.CONTRACT_ADDRESS);
 
     const appContract = new ethers.Contract(
-      // process.env.CONTRACT_ADDRESS,
-      process.env.CONTRACT_ADDRESS_EDU,
+      process.env.CONTRACT_ADDRESS,
+      // process.env.CONTRACT_ADDRESS_EDU,
       CONTRACT_ABIS.APP,
       this.wallet
     );
     const zkvContract = new ethers.Contract(
-      // process.env.ZKV_CONTRACT_ADDRESS,
-      process.env.ZKV_CONTRACT_ADDRESS_EDU,
+      process.env.ZKV_CONTRACT_ADDRESS,
+      // process.env.ZKV_CONTRACT_ADDRESS_EDU,
       CONTRACT_ABIS.ZKV,
       this.provider
     );
