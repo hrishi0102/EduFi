@@ -8,6 +8,8 @@ import HomePage from "./pages/HomePage";
 import LoanApplication from "./pages/LoanApplication";
 import LoansDashboard from "./pages/LoansDashboard";
 import ChatInterface from "./pages/ChatInterface";
+import CareerMatch from "./components/CareerMatch";
+import CourseRecommendations from "./components/CourseCard";
 
 const App = () => {
   const { isConnected } = useAppKitAccount();
@@ -26,6 +28,11 @@ const App = () => {
                 <Route path="/apply" element={<LoanApplication />} />
                 <Route path="/loans" element={<LoansDashboard />} />
                 <Route path="/chat" element={<ChatInterface />} />
+                <Route path="/career-match" element={<CareerMatch />} />
+                <Route
+                  path="/course-recommendations"
+                  element={<CourseRecommendations />}
+                />
                 <Route path="*" element={<Navigate to="/home" replace />} />
               </Routes>
             </>

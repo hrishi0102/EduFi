@@ -12,10 +12,14 @@ class AIService {
     - Loan application process
     - Required documentation
     - Loan terms and conditions
-    - Repayment schedules
+    - Repayment schedules and strategies
+    - Income-based repayment calculations
     - Interest calculations
+    - Affordability assessment
+    - Budget planning for loan repayment
     Keep responses concise, friendly, and focused on education loans.
-    Do not make promises about loan approval.`;
+    Do not make promises about loan approval.
+    Provide practical advice for managing loan repayments.`;
   }
 
   async getResponse(userMessage) {

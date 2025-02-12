@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Calculator } from "lucide-react";
 
-const RepaymentCalculator = ({ income, loanAmount, duration }) => {
+const RepaymentCalculator = ({ loanAmount, duration }) => {
   const [monthlyPayment, setMonthlyPayment] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
   const interestRate = 0.05; // 5% annual interest rate
@@ -20,19 +20,6 @@ const RepaymentCalculator = ({ income, loanAmount, duration }) => {
     }
   }, [loanAmount, duration]);
 
-  const getAffordabilityStatus = () => {
-    if (!income || !monthlyPayment) return null;
-    const monthlyIncome = income / 12;
-    const paymentRatio = (monthlyPayment / monthlyIncome) * 100;
-
-    if (paymentRatio <= 20) return { status: "Good", color: "text-green-600" };
-    if (paymentRatio <= 35)
-      return { status: "Moderate", color: "text-yellow-600" };
-    return { status: "High", color: "text-red-600" };
-  };
-
-  const affordability = getAffordabilityStatus();
-
   return (
     <div className="bg-white rounded-lg shadow p-6 my-4">
       <div className="flex items-center gap-2 mb-4">
@@ -44,26 +31,24 @@ const RepaymentCalculator = ({ income, loanAmount, duration }) => {
         <div className="bg-gray-50 p-4 rounded-lg">
           <p className="text-sm text-gray-600 mb-1">Monthly Payment</p>
           <p className="text-2xl font-bold text-blue-600">
-            {monthlyPayment ? `${monthlyPayment.toFixed(2)} ETH` : "-"}
+            {monthlyPayment ? `${monthlyPayment.toFixed(4)} ETH` : "-"}
           </p>
         </div>
 
         <div className="bg-gray-50 p-4 rounded-lg">
           <p className="text-sm text-gray-600 mb-1">Total Payment</p>
           <p className="text-2xl font-bold text-blue-600">
-            {totalPayment ? `${totalPayment.toFixed(2)} ETH` : "-"}
+            {totalPayment ? `${totalPayment.toFixed(4)} ETH` : "-"}
           </p>
         </div>
       </div>
 
-      {affordability && (
-        <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-          <p className="text-sm text-gray-600 mb-1">Affordability Status</p>
-          <p className={`font-semibold ${affordability.color}`}>
-            {affordability.status}
-          </p>
-        </div>
-      )}
+      <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+        <p className="text-sm text-blue-800">
+          Your income has been verified through zero-knowledge proofs as meeting
+          our minimum requirements for this loan amount.
+        </p>
+      </div>
 
       <div className="mt-4 text-sm text-gray-500">
         * Calculations based on {(interestRate * 100).toFixed(1)}% annual

@@ -15,6 +15,7 @@ const Navbar = () => {
     { path: "/loans", label: "My Loans" },
     { path: "/apply", label: "Apply" },
     { path: "/chat", label: "AI Assistant" },
+    { path: "/career-match", label: "Find Courses" },
   ];
 
   return (

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppKitAccount } from "@reown/appkit/react";
 import contractService from "../services/contractService";
 import Spinner from "../components/Spinner";
+import RepaymentCalculator from "../components/RepaymentCalculator";
 
 const LoanApplication = () => {
   const navigate = useNavigate();
@@ -12,6 +13,10 @@ const LoanApplication = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [isVerified, setIsVerified] = useState(false);
+  const [calculatorValues, setCalculatorValues] = useState({
+    amount: "",
+    duration: "",
+  });
   const [formData, setFormData] = useState({
     amount: "",
     duration: "",
@@ -40,10 +45,19 @@ const LoanApplication = () => {
   }, [address, isConnected]);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    // Update calculator values when loan details change
+    if (name === "amount" || name === "duration") {
+      setCalculatorValues({
+        ...calculatorValues,
+        [name]: value,
+      });
+    }
   };
 
   const validateForm = () => {
@@ -194,6 +208,13 @@ const LoanApplication = () => {
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
             <p className="text-red-600 text-center">{error}</p>
           </div>
+        )}
+
+        {isVerified && formData.amount && formData.duration && (
+          <RepaymentCalculator
+            loanAmount={parseFloat(formData.amount)}
+            duration={parseInt(formData.duration)}
+          />
         )}
 
         <button
