@@ -12,10 +12,11 @@ const Navbar = () => {
 
   const navItems = [
     { path: "/home", label: "Home" },
-    { path: "/loans", label: "My Loans" },
+    { path: "/career-match", label: "AI Matchmaking" },
     { path: "/apply", label: "Apply" },
-    { path: "/chat", label: "AI Assistant" },
-    { path: "/career-match", label: "Find Courses" },
+    { path: "/loans", label: "My Loans" },
+    { path: "/chat", label: "AI Chat" },
+    { path: "/certificates", label: "Dashboard" },
   ];
 
   return (
