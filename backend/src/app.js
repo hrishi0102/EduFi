@@ -7,6 +7,7 @@ const zkVerifyService = require("./services/zkVerifyService");
 const { PORT } = require("./config/constants");
 const aiRoutes = require("./routes/aiRoutes");
 const courseRoutes = require("./routes/courseRoutes");
+const agentRoutes = require("./routes/agentRoutes");
 
 const app = express();
 
@@ -23,6 +24,7 @@ checkEnvironment();
 app.use("/", proofRoutes);
 app.use("/ai", aiRoutes);
 app.use("/api", courseRoutes);
+app.use("/api/agent", agentRoutes);
 
 // Start server
 async function startServer() {

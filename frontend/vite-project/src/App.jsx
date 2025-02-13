@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAppKitAccount } from "@reown/appkit/react";
 import VerificationPage from "./pages/VerificationPage";
@@ -11,9 +11,34 @@ import ChatInterface from "./pages/ChatInterface";
 import CareerMatch from "./components/CareerMatch";
 import CourseRecommendations from "./components/CourseCard";
 import CertificateDashboard from "./components/CertificateDashboard";
+import AgentChatPage from "./pages/AgentChatPage";
 
 const App = () => {
   const { isConnected } = useAppKitAccount();
+
+  useEffect(() => {
+    const attemptReconnect = async () => {
+      try {
+        const lastConnected = localStorage.getItem("walletConnected");
+        if (lastConnected === "true" && !isConnected) {
+          await open();
+        }
+      } catch (error) {
+        console.error("Failed to reconnect wallet:", error);
+      }
+    };
+
+    attemptReconnect();
+  }, []);
+
+  // Save connection status
+  useEffect(() => {
+    if (isConnected) {
+      localStorage.setItem("walletConnected", "true");
+    } else {
+      localStorage.removeItem("walletConnected");
+    }
+  }, [isConnected]);
 
   return (
     <div>
@@ -25,6 +50,7 @@ const App = () => {
             <>
               <Navbar />
               <Routes>
+                <Route path="/agent-chat" element={<AgentChatPage />} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/apply" element={<LoanApplication />} />
                 <Route path="/loans" element={<LoansDashboard />} />
