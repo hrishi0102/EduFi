@@ -12,7 +12,8 @@
   "dependencies": {
     "@reown/appkit": "^1.6.5",
     "@reown/appkit-adapter-ethers": "^1.6.5",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.6",
+    "@tailwindcss/vite": "^4.0.6",
     "axios": "^1.7.9",
     "lucide-react": "^0.474.0",
     "pinata-web3": "^0.5.4",

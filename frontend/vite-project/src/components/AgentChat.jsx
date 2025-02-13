@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Send, Bot, User, Loader } from "lucide-react";
-import Navbar from "./Navbar";
 
 const AgentChat = () => {
   const [messages, setMessages] = useState([]);
@@ -61,7 +60,6 @@ const AgentChat = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
-      <Navbar />
       {/* Header */}
       <div className="bg-gray-800 border-b border-gray-700 p-4">
         <div className="max-w-4xl mx-auto flex items-center space-x-2">
