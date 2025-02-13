@@ -1,5 +1,15 @@
 # **EduFi - AI-Powered Private Education Financing with ZK-Proofs**
 
+## **Deployments**
+
+# Deployed Contract Addresses
+
+| Contract | ARB Address                                                                                                                    | Edu Chain Address                                                                                                                           |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| ZKIncome | [`0x3e4DD76CC6433274d676244eA7162f1aCE559Dbb`](https://sepolia.arbiscan.io/address/0x3e4DD76CC6433274d676244eA7162f1aCE559Dbb) | [`0x8030d7e5b94F4D6bb6C2638dEa9aFb2D5E7f5d31`](https://edu-chain-testnet.blockscout.com/address/0x8030d7e5b94F4D6bb6C2638dEa9aFb2D5E7f5d31) |
+| EduFi    | [`0x56F6DDc14A5AB38Ae03f6437f7b4a9bE6252327a`](https://sepolia.arbiscan.io/address/0x56F6DDc14A5AB38Ae03f6437f7b4a9bE6252327a) | [`0x6674256E7461518B5Be7F2FB43029132d9385385`](https://edu-chain-testnet.blockscout.com/address/0x6674256E7461518B5Be7F2FB43029132d9385385) |
+| ZKV      | [`0x82941a739E74eBFaC72D0d0f8E81B1Dac2f586D5`](https://sepolia.arbiscan.io/address/0x82941a739E74eBFaC72D0d0f8E81B1Dac2f586D5) | [`0x147AD899D1773f5De5e064C33088b58c7acb7acf`](https://edu-chain-testnet.blockscout.com/address/0x147AD899D1773f5De5e064C33088b58c7acb7acf) |
+
 ## **Problem Statement**
 
 Education is a powerful tool for social mobility, but access to quality education remains a challenge, especially in underdeveloped and developing countries. Many students struggle with financial constraints and lack access to fair, transparent, and secure education financing options.
